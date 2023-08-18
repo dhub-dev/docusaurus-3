@@ -8,6 +8,7 @@ description: Docusaurus statically renders your React code into HTML, allowing f
 In [architecture](architecture.mdx), we mentioned that the theme is run in Webpack. But beware: that doesn't mean it always has access to browser globals! The theme is built twice:
 
 - During **server-side rendering**, the theme is compiled in a sandbox called [React DOM Server](https://reactjs.org/docs/react-dom-server.html). You can see this as a "headless browser", where there is no `window` or `document`, only React. SSR produces static HTML pages.
+
 - During **client-side rendering**, the theme is compiled to JavaScript that gets eventually executed in the browser, so it has access to browser variables.
 
 :::info SSR or SSG?
@@ -117,7 +118,9 @@ Note that Docusaurus is ultimately a single-page application, so static site gen
 If you want to render any dynamic content on your screen that relies on the browser API to be functional at all, for example:
 
 - Our [live codeblock](../guides/markdown-features/markdown-features-code-blocks.mdx#interactive-code-editor), which runs in the browser's JS runtime
+
 - Our [themed image](../guides/markdown-features/markdown-features-assets.mdx#themed-images) that detects the user's color scheme to display different images
+
 - The JSON viewer of our debug panel which uses the `window` global for styling
 
 You may need to escape from SSR since static HTML can't display anything useful without knowing the client state.

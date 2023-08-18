@@ -15,7 +15,9 @@ import Navbar from '@theme/Navbar';
 The alias `@theme` can refer to a few directories, in the following priority:
 
 1. A user's `website/src/theme` directory, which is a special directory that has the higher precedence.
+
 2. A Docusaurus theme package's `theme` directory.
+
 3. Fallback components provided by Docusaurus core (usually not needed).
 
 This is called a _layered architecture_: a higher-priority layer providing the component would shadow a lower-priority layer, making swizzling possible. Given the following structure:
@@ -126,8 +128,11 @@ Because Docusaurus builds a single-page application, `script` tags will only be 
 For every route transition, there will be several important timings:
 
 1. The user clicks a link, which causes the router to change its current location.
+
 2. Docusaurus preloads the next route's assets, while keeping displaying the current page's content.
+
 3. The next route's assets have loaded.
+
 4. The new location's route component gets rendered to DOM.
 
 `onRouteUpdate` will be called at event (2), and `onRouteDidUpdate` will be called at (4). They both receive the current location and the previous location (which can be `null`, if this is the first screen).

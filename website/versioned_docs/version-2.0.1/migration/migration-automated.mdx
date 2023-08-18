@@ -15,11 +15,17 @@ Manual work is still required after using the migration CLI, as we can't automat
 The migration CLI migrates:
 
 - Site configurations (from `siteConfig.js` to `docusaurus.config.js`)
+
 - `package.json`
+
 - `sidebars.json`
+
 - `/docs`
+
 - `/blog`
+
 - `/static`
+
 - `versioned_sidebar.json` and `/versioned_docs` if your site uses versioning
 
 To use the migration CLI, follow these steps:
@@ -36,7 +42,7 @@ npx @docusaurus/migrate migrate <v1 website directory> <desired v2 website direc
 npx @docusaurus/migrate migrate ./v1-website ./v2-website
 ```
 
-3. To view your new website locally, go into your v2 website's directory and start your development server.
+1. To view your new website locally, go into your v2 website's directory and start your development server.
 
 ```bash
 cd ./v2-website

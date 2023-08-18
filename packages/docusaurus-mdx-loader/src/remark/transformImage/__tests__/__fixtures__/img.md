@@ -14,7 +14,7 @@ in paragraph ![img](static/img.png)
 
 ![img](./static/img.png 'Title') ![img](/img.png)
 
-![img with "quotes"](./static/img.png ''Quoted' title')
+!\[img with "quotes"]\(./static/img.png ''Quoted' title')
 
 ![site alias](@site/static/img.png)
 

@@ -16,13 +16,13 @@ We document the usage of [Crowdin](https://crowdin.com/), as **one** possible **
 
 This is **not an endorsement of Crowdin** as the unique choice to translate a Docusaurus site, but it is successfully used by Facebook to translate documentation projects such as [Jest](https://jestjs.io/), [Docusaurus](https://docusaurus.io/), and [ReasonML](https://reasonml.github.io/).
 
-Refer to the **[Crowdin documentation](https://support.crowdin.com/)** and **[Crowdin support](mailto:support@crowdin.com)** for help.
+Refer to the [**Crowdin documentation**](https://support.crowdin.com/) and [**Crowdin support**](mailto:support@crowdin.com) for help.
 
 :::
 
 :::tip
 
-Use this **[community-driven GitHub discussion](https://github.com/facebook/docusaurus/discussions/4052)** to discuss anything related to Docusaurus + Crowdin.
+Use this [**community-driven GitHub discussion**](https://github.com/facebook/docusaurus/discussions/4052) to discuss anything related to Docusaurus + Crowdin.
 
 :::
 
@@ -33,14 +33,16 @@ Crowdin is a translation SaaS, offering a [free plan for open-source projects](h
 We recommend the following translation workflow:
 
 - **Upload sources** to Crowdin (untranslated files)
+
 - Use Crowdin to **translate the content**
+
 - **Download translations** from Crowdin (localized translation files)
 
 Crowdin provides a [CLI](https://support.crowdin.com/cli-tool/) to **upload sources** and **download translations**, allowing you to automate the translation process.
 
 The [`crowdin.yml` configuration file](https://support.crowdin.com/configuration-file/) is convenient for Docusaurus, and permits to **download the localized translation files at the expected location** (in `i18n/[locale]/..`).
 
-Read the **[official documentation](https://support.crowdin.com/)** to know more about advanced features and different translation workflows.
+Read the [**official documentation**](https://support.crowdin.com/) to know more about advanced features and different translation workflows.
 
 ## Crowdin tutorial {#crowdin-tutorial}
 
@@ -115,6 +117,7 @@ Your project is created, but it is empty for now. We will upload the files to tr
 This configuration ([doc](https://support.crowdin.com/configuration-file/)) provides a mapping for the Crowdin CLI to understand:
 
 - Where to find the source files to upload (JSON and Markdown)
+
 - Where to download the files after translation (in `i18n/[locale]`)
 
 Create `crowdin.yml` in `website`:
@@ -138,7 +141,9 @@ files:
 Crowdin has its own syntax for declaring source/translation paths:
 
 - `**/*`: everything in a subfolder
+
 - `%two_letters_code%`: the 2-letters variant of Crowdin target languages (`fr` in our case)
+
 - `**/%original_file_name%`: the translations will preserve the original folder/file hierarchy
 
 :::info
@@ -148,8 +153,11 @@ The Crowdin CLI warnings are not always easy to understand.
 We advise to:
 
 - change one thing at a time
+
 - re-upload sources after any configuration change
+
 - use paths starting with `/` (`./` does not work)
+
 - avoid fancy globbing patterns like `/docs/**/*.(md|mdx)` (does not work)
 
 :::
@@ -177,6 +185,7 @@ You should **not commit** it, and it may be a good idea to create a dedicated **
 #### Other configuration fields {#other-configuration-fields}
 
 - `project_id`: can be hardcoded, and is found on `https://crowdin.com/project/<MY_PROJECT_NAME>/settings#api`
+
 - `preserve_hierarchy`: preserve the folder's hierarchy of your docs on Crowdin UI instead of flattening everything
 
 ### Install the Crowdin CLI {#install-the-crowdin-cli}
@@ -250,6 +259,7 @@ Translate some Markdown files.
 Use `Hide String` to make sure translators **don't translate things that should not be**:
 
 - Front matter: `id`, `slug`, `tags` ...
+
 - Admonitions: `:::`, `:::note`, `:::tip` ...
 
 ![Crowdin UI hide string](/img/crowdin/crowdin-hide-string.png)
@@ -268,7 +278,7 @@ The `description` attribute of JSON translation files is visible on Crowdin to h
 
 :::tip
 
-**[Pre-translate](https://support.crowdin.com/pre-translation-via-machine/)** your site, and **fix pre-translation mistakes manually** (enable the Global Translation Memory in settings first).
+[**Pre-translate**](https://support.crowdin.com/pre-translation-via-machine/) your site, and **fix pre-translation mistakes manually** (enable the Global Translation Memory in settings first).
 
 Use the `Hide String` feature first, as Crowdin is pre-translating things too optimistically.
 
@@ -290,7 +300,7 @@ Start your site on the French locale:
 npm run start -- --locale fr
 ```
 
-Make sure that your website is now translated in French at [http://localhost:3000/fr/](http://localhost:3000/fr/).
+Make sure that your website is now translated in French at <http://localhost:3000/fr/>.
 
 ### Automate with CI {#automate-with-ci}
 
@@ -379,7 +389,9 @@ import TabItem from '@theme/TabItem';
 This will:
 
 - be interpreted by Crowdin as code blocks (and not mess-up with the markup on download)
+
 - be interpreted by Docusaurus as regular JSX (as if it was not wrapped by any code block)
+
 - unfortunately opt-out of MDX tooling (IDE syntax highlighting, Prettier...)
 
 ### Docs versioning {#docs-versioning}
@@ -407,6 +419,7 @@ You need to configure translation files for each plugin instance.
 If you have a docs plugin instance with `id=ios`, you will need to configure those source files as well
 
 - `website/ios`
+
 - `website/ios_versioned_docs` (if versioned)
 
 ### Maintaining your site {#maintaining-your-site}
@@ -423,20 +436,20 @@ When your sources are refactored, you should use the Crowdin UI to **update your
 
 Crowdin has multiple VCS integrations for [GitHub](https://support.crowdin.com/github-integration/), GitLab, Bitbucket.
 
-:::warning TL;DR
-
-We recommend avoiding them.
-
-:::
+:::warning TL;DR We recommend avoiding them. :::
 
 It could have been helpful to be able to edit the translations in both Git and Crowdin, and have a **bi-directional sync** between the 2 systems.
 
 In practice, **it didn't work very reliably** for a few reasons:
 
 - The Crowdin -> Git sync works fine (with a pull request)
+
 - The Git -> Crowdin sync is manual (you have to press a button)
+
 - The heuristics used by Crowdin to match existing Markdown translations to existing Markdown sources are not 100% reliable, and you have to verify the result on Crowdin UI after any sync from Git
+
 - 2 users concurrently editing on Git and Crowdin can lead to a translation loss
+
 - It requires the `crowdin.yml` file to be at the root of the repository
 
 ### In-Context localization {#in-context-localization}

@@ -25,6 +25,7 @@ These documentations may even have different versioning/release lifecycles.
 If you build a cross-platform mobile SDK, you may have 2 documentations:
 
 - Android SDK documentation (`v1.0`, `v1.1`)
+
 - iOS SDK documentation (`v1.0`, `v2.0`)
 
 In this case, you can use a distinct docs plugin instance per mobile SDK documentation.
@@ -44,6 +45,7 @@ Sometimes, you want some documents to be versioned, while other documents are mo
 We use this pattern on the Docusaurus website itself:
 
 - The [/docs/\*](/docs) section is versioned
+
 - The [/community/\*](/community/support) section is unversioned
 
 ## Setup {#setup}
@@ -51,6 +53,7 @@ We use this pattern on the Docusaurus website itself:
 Suppose you have 2 documentations:
 
 - Product: some versioned doc about your product
+
 - Community: some unversioned doc about the community around your product
 
 In this case, you should use the same plugin twice in your site configuration.
@@ -146,13 +149,17 @@ Each plugin instance will store versioned docs in a distinct folder.
 The default plugin instance will use these paths:
 
 - `website/versions.json`
+
 - `website/versioned_docs`
+
 - `website/versioned_sidebars`
 
 The other plugin instances (with an `id` attribute) will use these paths:
 
 - `website/[pluginId]_versions.json`
+
 - `website/[pluginId]_versioned_docs`
+
 - `website/[pluginId]_versioned_sidebars`
 
 :::tip

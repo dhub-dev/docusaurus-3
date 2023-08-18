@@ -54,6 +54,7 @@ In [#8708](https://github.com/facebook/docusaurus/pull/8708), we added the possi
 This is useful to ensure a consistent theme when embedding an existing Docusaurus page into an iframe or WebView.
 
 <IframeWindow url="/docs/?docusaurus-theme=light" />
+
 <IframeWindow url="/docs/?docusaurus-theme=dark" />
 
 ### Remark plugin npm2yarn upgrade
@@ -71,13 +72,8 @@ npm run myCustomScript -- --some-arg
 ````
 
 <BrowserWindow>
-
-```bash npm2yarn
-npm install
-npm run build
-npm run myCustomScript -- --some-arg
-```
-
+  ```bash npm2yarn npm install npm run build npm run myCustomScript --
+  --some-arg ```
 </BrowserWindow>
 
 ### gtag support for multiple tracking IDs
@@ -106,11 +102,11 @@ module.exports = {
 
 :::caution Google is sunsetting Universal Analytics
 
-**[Google will sunset its Universal Analytics](https://blog.google/products/marketingplatform/analytics/prepare-for-future-with-google-analytics-4/)** on **July 1, 2023**.
+[**Google will sunset its Universal Analytics**](https://blog.google/products/marketingplatform/analytics/prepare-for-future-with-google-analytics-4/) on **July 1, 2023**.
 
 Docusaurus users should migrate to Google Analytics 4. Google **does not permit to migrate your existing Universal Analytics data** to your new Google Analytics 4 property.
 
-To preserve the continuity of your analytics, we temporarily recommend that you report events to 2 tracking IDs at the same time: the old one (`UA-*`) and new one (`G-*`). Refer to the **[dedicated issue](https://github.com/facebook/docusaurus/issues/7221)** for details.
+To preserve the continuity of your analytics, we temporarily recommend that you report events to 2 tracking IDs at the same time: the old one (`UA-*`) and new one (`G-*`). Refer to the [**dedicated issue**](https://github.com/facebook/docusaurus/issues/7221) for details.
 
 :::
 
@@ -120,7 +116,7 @@ In [#8736](https://github.com/facebook/docusaurus/pull/8736), we improved how we
 
 :::tip
 
-To see it in action, click here: <ErrorBoundaryTestButton cause="Probably undefined is not a function 😄"/>
+To see it in action, click here: <ErrorBoundaryTestButton cause="Probably undefined is not a function 😄" />
 
 :::
 
@@ -133,11 +129,13 @@ In [#8735](https://github.com/facebook/docusaurus/pull/8735) we also made navbar
 We made it possible to translate some new elements:
 
 - [#8677](https://github.com/facebook/docusaurus/pull/8677) introduces a new `process.env.DOCUSAURUS_CURRENT_LOCALE` (experimental) allowing you to localize your config file, including site title, tagline, announcement bar, baseUrl...
+
 - [#8616](https://github.com/facebook/docusaurus/pull/8616) allows to translate the navbar and footer logo alt text
 
 We added default theme translation support for multiple languages:
 
 - 🇭🇺 [#8668](https://github.com/facebook/docusaurus/pull/8668): Hungarian
+
 - 🇳🇴 [#8631](https://github.com/facebook/docusaurus/pull/8631): Norwegian (Bokmål)
 
 :::tip
@@ -151,11 +149,17 @@ Completing theme translations is an [ongoing effort](https://github.com/facebook
 Other notable changes include:
 
 - [#8674](https://github.com/facebook/docusaurus/pull/8674): respect `prefers-reduced-motion: reduce` media query
+
 - [#8712](https://github.com/facebook/docusaurus/pull/8712): use a navbar item of type `docSidebar` in template
+
 - [#8801](https://github.com/facebook/docusaurus/pull/8801): allow tabs children to be falsy
+
 - [#8757](https://github.com/facebook/docusaurus/pull/8757): make search page react to external query-string changes
+
 - [#8803](https://github.com/facebook/docusaurus/pull/8803): fix code block buttons position in RTL
+
 - [#8615](https://github.com/facebook/docusaurus/pull/8615): fix color mode toggle when using dark navbar
+
 - [#8699](https://github.com/facebook/docusaurus/pull/8699): fix navbar dropdown tab focus bug
 
-Check the **[2.4.0 changelog entry](/changelog/2.4.0)** for an exhaustive list of changes.
+Check the [**2.4.0 changelog entry**](/changelog/2.4.0) for an exhaustive list of changes.

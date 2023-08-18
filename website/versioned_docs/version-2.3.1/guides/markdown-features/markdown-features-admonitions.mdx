@@ -54,11 +54,13 @@ Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
 Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
+
 :::
 
 :::tip
 
 Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
 
 :::
 
@@ -66,17 +68,20 @@ Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
 Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
+
 :::
 
 :::caution
 
 Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
 
+
 :::
 
 :::danger
 
 Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
 
 :::
 
@@ -94,11 +99,14 @@ If you use [Prettier](https://prettier.io) to format your Markdown files, Pretti
 
 Hello world
 
+
 :::
 
 <!-- Prettier changes this -->
 :::note
+
 Hello world
+
 :::
 
 <!-- to this -->
@@ -124,6 +132,7 @@ Some **content** with _Markdown_ `syntax`.
 
 Some **content** with _Markdown_ `syntax`.
 
+
 :::
 
 </BrowserWindow>
@@ -148,6 +157,7 @@ Use tabs in admonitions
   <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
 </Tabs>
 
+
 :::
 ```
 
@@ -163,6 +173,7 @@ Use tabs in admonitions
   <TabItem value="orange" label="Orange">This is an orange 🍊</TabItem>
   <TabItem value="banana" label="Banana">This is a banana 🍌</TabItem>
 </Tabs>
+
 
 :::
 
@@ -253,6 +264,7 @@ module.exports = {
 The plugin accepts two options:
 
 - `tag`: The tag that encloses the admonition. Defaults to `:::`.
+
 - `keywords`: An array of keywords that can be used as the type for the admonition. Note that if you override this, the default values will not be applied.
 
 The `keyword` will be passed as the `type` prop of the `Admonition` component. If you register more types than the default, you are also responsible for providing their implementation—including the container's style, icon, default title text, etc. You would usually need to [eject](../../swizzling.mdx#ejecting) the `@theme/Admonition` component, so you could re-use the same infrastructure as the other types.
