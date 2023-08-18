@@ -78,7 +78,7 @@ The blog's index page (by default, it is at `/blog`) is the _blog list page_, wh
 
 Use the `<!--truncate-->` marker in your blog post to represent what will be shown as the summary when viewing all published blog posts. Anything above `<!--truncate-->` will be part of the summary. Note that the portion above the truncate marker must be standalone renderable Markdown. For example:
 
-```md title="website/blog/my-post.md" {7}
+```md title="website/blog/my-post.md"
 ---
 title: Markdown blog truncation example
 ---
@@ -93,7 +93,7 @@ But anything from here on down will not be.
 For files using the `.mdx` extension, use a [MDX](https://mdxjs.com/) comment `{/* truncate */}` instead:
 
 {/* prettier-ignore */}
-```md title="website/blog/my-post.mdx" {7}
+```md title="website/blog/my-post.mdx"
 ---
 title: MDX blog truncation Example
 ---
@@ -156,7 +156,7 @@ module.exports = {
 Docusaurus will extract a `YYYY-MM-DD` date from many patterns such as `YYYY-MM-DD-my-blog-post-title.md` or `YYYY/MM/DD/my-blog-post-title.md`. This enables you to easily group blog posts by year, by month, or to use a flat structure.
 
 <details>
-<summary>Supported date extraction patterns</summary>
+  <summary>Supported date extraction patterns</summary>
 
 | Pattern | Example |
 | --- | --- |
@@ -441,7 +441,7 @@ module.exports = {
 
 Usage:
 
-```md "my-blog-post.md"
+```md
 ---
 hide_reading_time: true
 ---
@@ -569,27 +569,20 @@ module.exports = {
 The feeds can be found at:
 
 <Tabs>
-<TabItem value="RSS">
+  <TabItem value="RSS">
+    ```text
+    https://example.com/blog/rss.xml
+    ```
+  </TabItem>
 
-```text
-https://example.com/blog/rss.xml
-```
+{' '}
+<TabItem value="Atom">```text https://example.com/blog/atom.xml ```</TabItem>
 
-</TabItem>
-<TabItem value="Atom">
-
-```text
-https://example.com/blog/atom.xml
-```
-
-</TabItem>
-<TabItem value="JSON">
-
-```text
-https://example.com/blog/feed.json
-```
-
-</TabItem>
+  <TabItem value="JSON">
+    ```text
+    https://example.com/blog/feed.json
+    ```
+  </TabItem>
 </Tabs>
 
 ## Advanced topics {#advanced-topics}

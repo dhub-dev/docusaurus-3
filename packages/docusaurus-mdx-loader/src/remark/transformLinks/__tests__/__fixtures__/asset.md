@@ -1,7 +1,5 @@
 [asset](https://example.com/asset.pdf)
 
-[](./asset.pdf)
-
 [asset](./asset.pdf)
 
 in paragraph [asset](./asset.pdf)
@@ -10,7 +8,7 @@ in paragraph [asset](./asset.pdf)
 
 [asset with hash](./asset.pdf#page=2)
 
-[asset](asset.pdf 'Title')
+[asset](asset.pdf)
 
 [page](noUrl.md)
 
@@ -32,7 +30,7 @@ in paragraph [asset](./asset.pdf)
 
 [@site/static/staticAsset.pdf](@site/static/staticAsset.pdf)
 
-[@site/static/staticAsset.pdf](@site/static/staticAsset.pdf#page=2 'Title')
+[@site/static/staticAsset.pdf](@site/static/staticAsset.pdf#page=2)
 
 [Just staticAsset.pdf](/staticAsset.pdf), and [**awesome** staticAsset 2.pdf 'It is really "AWESOME"'](/staticAsset.pdf), but also [coded `staticAsset 3.pdf`](/staticAsset.pdf)
 

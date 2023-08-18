@@ -57,12 +57,12 @@ _This is italic text_
 
 _This is italic text_
 
-~~Deleted text~~
+! unknown handler not found
 
 Superscript: 19^th^
 
-Subscript: H~2~O
+! text handler not found! unknown handler not found! text handler not found
 
 ++Inserted text++
 
-==Marked text==
+\==Marked text==

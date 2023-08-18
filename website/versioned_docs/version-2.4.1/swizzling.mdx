@@ -16,8 +16,7 @@ In practice, swizzling permits to **swap a theme component with your own impleme
 - [**Wrapping**](#wrapping): creates a **wrapper** around the original theme component, which you can **enhance**
 
 <details>
-
-<summary>Why is it called swizzling?</summary>
+  <summary>Why is it called swizzling?</summary>
 
 **The name comes from Objective-C and Swift-UI**: [method swizzling](https://pspdfkit.com/blog/2019/swizzling-in-swift/) is the process of changing the implementation of an existing selector (method).
 
@@ -100,11 +99,7 @@ After swizzling a component, **restart your dev server** in order for Docusaurus
 
 :::
 
-:::warning Prefer staying on the safe side
-
-Be sure to understand [which components are **safe to swizzle**](#what-is-safe-to-swizzle). Some components are **internal implementation details** of a theme.
-
-:::
+:::warning Prefer staying on the safe side Be sure to understand [which components are **safe to swizzle**](#what-is-safe-to-swizzle). Some components are **internal implementation details** of a theme. :::
 
 :::info
 
@@ -227,8 +222,7 @@ export default function BlogPostItemWrapper(props) {
 Some theme components are **internal implementation details** of a theme. Docusaurus allows you to swizzle them, but it **might be risky**.
 
 <details>
-
-<summary>Why is it risky?</summary>
+  <summary>Why is it risky?</summary>
 
 Theme authors (including us) might have to update their theme over time: changing the component props, name, file system location, types... For example, consider a component that receives two props `name` and `age`, but after a refactor, it now receives a `person` prop with the above two properties. Your component, which still expects these two props, will render `undefined` instead.
 

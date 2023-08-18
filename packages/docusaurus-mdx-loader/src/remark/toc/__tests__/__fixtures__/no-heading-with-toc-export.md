@@ -3,7 +3,7 @@ foo
 `bar`
 
 ```js
-baz
+baz;
 ```
 
 export const toc = 1;

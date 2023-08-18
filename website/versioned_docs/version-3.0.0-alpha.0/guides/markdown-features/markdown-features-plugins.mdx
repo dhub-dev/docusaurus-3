@@ -20,8 +20,8 @@ And the answer is: create an MDX plugin! MDX has a built-in [plugin system](http
 
 If you play with the [MDX playground](https://mdxjs.com/playground/), you would notice that the MDX transpilation has two intermediate steps: Markdown AST (MDAST), and Hypertext AST (HAST), before arriving at the final JSX output. MDX plugins also come in two forms:
 
-- **[Remark](https://github.com/remarkjs/remark/)**: processes the Markdown AST.
-- **[Rehype](https://github.com/rehypejs/rehype/)**: processes the Hypertext AST.
+- [**Remark**](https://github.com/remarkjs/remark/): processes the Markdown AST.
+- [**Rehype**](https://github.com/rehypejs/rehype/): processes the Hypertext AST.
 
 :::tip
 
@@ -127,7 +127,7 @@ The writeup below is **not** meant to be a comprehensive guide to creating a plu
 
 For example, let's make a plugin that visits every `h2` heading and adds a `Section X. ` prefix. First, create your plugin source file anywhere—you can even publish it as a separate npm package and install it like explained above. We would put ours at `src/remark/section-prefix.js`. A remark/rehype plugin is just a function that receives the `options` and returns a `transformer` that operates on the AST.
 
-```js "src/remark/section-prefix.js"
+```js
 const visit = require('unist-util-visit');
 
 const plugin = (options) => {

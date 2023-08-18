@@ -86,7 +86,7 @@ Since all doc files are parsed using MDX, anything that looks like HTML is actua
 
 This behavior is different from Docusaurus 1. See also [Migrating from v1 to v2](../../migration/migration-manual.mdx#convert-style-attributes-to-style-objects-in-mdx).
 
-In addition, MDX is not [100% compatible with CommonMark](https://github.com/facebook/docusaurus/issues/3018). Use the **[MDX playground](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground)** to ensure that your syntax is valid MDX.
+In addition, MDX is not [100% compatible with CommonMark](https://github.com/facebook/docusaurus/issues/3018). Use the [**MDX playground**](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground) to ensure that your syntax is valid MDX.
 
 :::
 
@@ -194,13 +194,9 @@ I can conveniently use <Highlight color="#25c2a0">Docusaurus green</Highlight> e
 </BrowserWindow>
 ```
 
-:::warning
+:::warning We use **upper-case** tag names like `Highlight` on purpose.
 
-We use **upper-case** tag names like `Highlight` on purpose.
-
-From MDX v2+ onward (Docusaurus v3+), lower-case tag names are always rendered as native html elements, and will not use any component mapping you provide.
-
-:::
+From MDX v2+ onward (Docusaurus v3+), lower-case tag names are always rendered as native html elements, and will not use any component mapping you provide. :::
 
 :::caution
 
@@ -231,10 +227,10 @@ If you don't wrap your imported MDX with `MDXContent`, the global scope will not
 
 ### Markdown and JSX interoperability {#markdown-and-jsx-interoperability}
 
-Docusaurus v2 is using MDX v1, which has a lot of known cases where the content fails to be correctly parsed as Markdown. Use the **[MDX playground](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground)** to ensure that your syntax is valid MDX.
+Docusaurus v2 is using MDX v1, which has a lot of known cases where the content fails to be correctly parsed as Markdown. Use the [**MDX playground**](https://mdx-git-renovate-babel-monorepo-mdx.vercel.app/playground) to ensure that your syntax is valid MDX.
 
 <details>
-<summary>Samples of parsing failures</summary>
+  <summary>Samples of parsing failures</summary>
 
 **A paragraph starting with a JSX tag will be seen entirely as a JSX string:**
 
@@ -342,10 +338,9 @@ Use JSX within JSX tag, or move the Markdown to the outer layer:
 ```
 
 {/* prettier-ignore */}
+
 ```jsx
-<div style={{color: 'red'}}>
-**Bold still doesn't work**
-</div>
+<div style={{color: 'red'}}>**Bold still doesn't work**</div>
 ```
 
 ```mdx-code-block
@@ -368,12 +363,9 @@ Add an empty new line:
 ```
 
 {/* prettier-ignore */}
+
 ```jsx
-<div style={{color: 'red'}}>
-
-**Bold now works**
-
-</div>
+<div style={{color: 'red'}}>**Bold now works**</div>
 ```
 
 ```mdx-code-block
@@ -398,12 +390,9 @@ Add an empty new line:
 ```
 
 {/* prettier-ignore */}
+
 ```jsx
-<div style={{color: 'red'}}>
-
-    You may think I'm just some text...
-
-</div>
+<div style={{color: 'red'}}>You may think I'm just some text...</div>
 ```
 
 ```mdx-code-block
@@ -428,12 +417,9 @@ Don't indent:
 ```
 
 {/* prettier-ignore */}
+
 ```jsx
-<div style={{color: 'red'}}>
-
-Now I'm actually just text
-
-</div>
+<div style={{color: 'red'}}>Now I'm actually just text</div>
 ```
 
 ```mdx-code-block
@@ -490,11 +476,7 @@ You have to use `<CodeBlock>` rather than the Markdown triple-backtick ` ``` `, 
 
 :::
 
-:::warning
-
-This feature is experimental and might be subject to breaking API changes in the future.
-
-:::
+:::warning This feature is experimental and might be subject to breaking API changes in the future. :::
 
 ## Importing Markdown {#importing-markdown}
 

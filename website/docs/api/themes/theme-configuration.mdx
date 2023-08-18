@@ -358,7 +358,7 @@ Accepted fields:
 | --- | --- | --- | --- |
 | `type` | `'dropdown'` | Optional | Sets the type of this item to a dropdown. |
 | `label` | `string` | **Required** | The name to be shown for this item. |
-| `items` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | **Required** | The items to be contained in the dropdown. |
+| `items` | <code>[LinkLikeItem](#navbar-dropdown)\[]</code> | **Required** | The items to be contained in the dropdown. |
 | `position` | <code>'left' \| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |
 
 ```mdx-code-block
@@ -525,8 +525,8 @@ Accepted fields:
 | --- | --- | --- | --- |
 | `type` | `'docsVersionDropdown'` | **Required** | Sets the type of this item to a docs version dropdown. |
 | `position` | <code>'left' \| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |
-| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |
-| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |
+| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)\[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |
+| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)\[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |
 | `docsPluginId` | `string` | `'default'` | The ID of the docs plugin that the doc versioning belongs to. |
 | `dropdownActiveClassDisabled` | `boolean` | `false` | Do not add the link active class when browsing docs. |
 
@@ -614,8 +614,8 @@ Accepted fields:
 | --- | --- | --- | --- |
 | `type` | `'localeDropdown'` | **Required** | Sets the type of this item to a locale dropdown. |
 | `position` | <code>'left' \| 'right'</code> | `'left'` | The side of the navbar this item should appear on. |
-| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |
-| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |
+| `dropdownItemsBefore` | <code>[LinkLikeItem](#navbar-dropdown)\[]</code> | `[]` | Add additional dropdown items at the beginning of the dropdown. |
+| `dropdownItemsAfter` | <code>[LinkLikeItem](#navbar-dropdown)\[]</code> | `[]` | Add additional dropdown items at the end of the dropdown. |
 | `queryString` | `string` | `undefined` | The query string to be appended to the URL. |
 
 ```mdx-code-block
@@ -819,7 +819,7 @@ If you use the line highlighting Markdown syntax, you might need to specify a di
 
 ### Default language {#default-language}
 
-You can set a default language for code blocks if no language is added after the opening triple backticks (i.e. ```). Note that a valid [language name](https://prismjs.com/#supported-languages) must be passed.
+You can set a default language for code blocks if no language is added after the opening triple backticks (i.e. \`\`\`). Note that a valid [language name](https://prismjs.com/#supported-languages) must be passed.
 
 Example configuration:
 
@@ -849,7 +849,7 @@ Accepted fields:
 | `logo` | `Logo` | `undefined` | Customization of the logo object. See [Navbar logo](#navbar-logo) for details. |
 | `copyright` | `string` | `undefined` | The copyright message to be displayed at the bottom, also supports custom HTML. |
 | `style` | <code>'dark' \| 'light'</code> | `'light'` | The color theme of the footer component. |
-| `links` | <code>(Column \| FooterLink)[]</code> | `[]` | The link groups to be present. |
+| `links` | <code>(Column \| FooterLink)\[]</code> | `[]` | The link groups to be present. |
 
 ```mdx-code-block
 </APITable>
