@@ -79,7 +79,9 @@ This documentation is a best-effort to help you migrate, please help us improve 
 Before all, we recommend to:
 
 - Migrate your v1 Docusaurus site to v2 without the translations
+
 - Get familiar with the [new i18n system of Docusaurus v2](../i18n/i18n-introduction.mdx) an
+
 - Make Crowdin work for your v2 site, using a new and untranslated Crowdin project and the [Crowdin tutorial](../i18n/i18n-crowdin.mdx)
 
 :::danger
@@ -101,13 +103,21 @@ This strategy was used to [upgrade the Jest website](https://jestjs.io/blog/2021
 Unfortunately, Crowdin does not have any "Duplicate/clone Project" feature, which makes things complicated.
 
 - Download the translation memory of your original project in `.tmx` format (`https://crowdin.com/project/<ORIGINAL_PROJECT>/settings#tm` > `View Records`)
+
 - Upload the translation memory to your new project (`https://crowdin.com/project/<NEW_PROJECT>/settings#tm` > `View Records`)
+
 - Reconfigure `crowdin.yml` for Docusaurus v2 according to the i18n docs
+
 - Upload the Docusaurus v2 source files with the Crowdin CLI to the new project
+
 - Mark sensitive strings like `id` or `slug` as "hidden string" on Crowdin
+
 - On the "Translations" tab, click on "Pre-Translation > via TM" (`https://crowdin.com/project/<NEW_PROJECT>/settings#translations`)
+
 - Try first with "100% match" (more content will be translated than "Perfect"), and pre-translate your sources
+
 - Download the Crowdin translations locally
+
 - Try to run/build your site and see if there are any errors
 
 You will likely have errors on your first-try: the pre-translation might try to translate things that it should not be translated (front matter, admonition, code blocks...), and the translated MD files might be invalid for the MDX parser.
@@ -117,7 +127,9 @@ You will have to fix all the errors until your site builds. You can do that by m
 There is no ultimate guide we could write to fix these errors, but common errors are due to:
 
 - Not marking enough strings as "hidden strings" in Crowdin, leading to pre-translation trying to translate these strings.
+
 - Having bad v1 translations, leading to invalid markup in v2: bad HTML elements inside translations and unclosed tags
+
 - Anything rejected by the MDX parser, like using HTML elements instead of JSX elements (use the [MDX playground](https://mdxjs.com/playground/) for debugging)
 
 You might want to repeat this pre-translation process, eventually trying the "Perfect" option and limiting pre-translation only some languages/files.

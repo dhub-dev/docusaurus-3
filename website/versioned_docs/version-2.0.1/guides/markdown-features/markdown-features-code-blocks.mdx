@@ -50,11 +50,7 @@ console.log('Every repo must come with a mascot.');
 Use the matching language meta string for your code block, and Docusaurus will pick up syntax highlighting automatically, powered by [Prism React Renderer](https://github.com/FormidableLabs/prism-react-renderer).
 
 <BrowserWindow>
-
-```js
-console.log('Every repo must come with a mascot.');
-```
-
+  ```js console.log('Every repo must come with a mascot.'); ```
 </BrowserWindow>
 
 ### Theming {#theming}
@@ -245,7 +241,7 @@ export default MyComponent;
 <BrowserWindow>
 ```
 
-```jsx {1,4-6,11}
+```jsx
 import React from 'react';
 
 function MyComponent(props) {
@@ -410,7 +406,7 @@ export default MyComponent;
 <BrowserWindow>
 ```
 
-```jsx {1,4-6,11} showLineNumbers
+```jsx showLineNumbers
 import React from 'react';
 
 function MyComponent(props) {
@@ -440,7 +436,7 @@ npm install --save @docusaurus/theme-live-codeblock
 
 You will also need to add the plugin to your `docusaurus.config.js`.
 
-```js {3}
+```js
 module.exports = {
   // ...
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -481,7 +477,7 @@ The code block will be rendered as an interactive editor. Changes to the code wi
 <BrowserWindow>
 ```
 
-```jsx live
+```jsx
 function Clock(props) {
   const [date, setDate] = useState(new Date());
   useEffect(() => {
@@ -559,7 +555,7 @@ The `ButtonExample` component is now available to use:
 <BrowserWindow>
 ```
 
-```jsx live
+```jsx
 function MyPlayground(props) {
   return (
     <div>
@@ -636,9 +632,13 @@ If you want to embed HTML markup such as anchor links or bold type, you can use 
 <BrowserWindow>
   <pre>
     <b>{'Input: '}</b>
+
     {'1 2 3 4\n'}
+
     <b>{'Output: '}</b>
+
     {'"366300745"\n'}
+
   </pre>
 </BrowserWindow>
 

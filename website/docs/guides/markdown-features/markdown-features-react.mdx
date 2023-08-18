@@ -21,7 +21,7 @@ Check out the [MDX docs](https://mdxjs.com/) to see what fancy stuff you can do 
 
 The MDX format is quite strict, and you may get compilation errors.
 
-Use the **[MDX playground](https://mdxjs.com/playground/)** to debug them and make sure your syntax is valid.
+Use the [**MDX playground**](https://mdxjs.com/playground/) to debug them and make sure your syntax is valid.
 
 :::
 
@@ -190,13 +190,9 @@ I can conveniently use <Highlight color="#25c2a0">Docusaurus green</Highlight> e
 </BrowserWindow>
 ```
 
-:::warning
+:::warning We use **upper-case** tag names like `Highlight` on purpose.
 
-We use **upper-case** tag names like `Highlight` on purpose.
-
-From MDX v2+ onward (Docusaurus v3+), lower-case tag names are always rendered as native html elements, and will not use any component mapping you provide.
-
-:::
+From MDX v2+ onward (Docusaurus v3+), lower-case tag names are always rendered as native html elements, and will not use any component mapping you provide. :::
 
 :::caution
 
@@ -234,8 +230,11 @@ The [MDX syntax](https://mdxjs.com/docs/what-is-mdx/#mdx-syntax) is mostly compa
 Some valid CommonMark features won't work with MDX ([more info](https://mdxjs.com/docs/what-is-mdx/#markdown)), notably:
 
 - Indented code blocks: use triple backticks instead
+
 - Autolinks (`<http://localhost:3000>`): use regular link syntax instead (`[http://localhost:3000](http://localhost:3000)`)
+
 - HTML syntax (`<p style="color: red;">`): use JSX instead (`<p style={{color: 'red'}}>`)
+
 - Unescaped `{` and `<`: escape them with `\` instead (`\{` and `\<`)
 
 :::tip
@@ -243,6 +242,7 @@ Some valid CommonMark features won't work with MDX ([more info](https://mdxjs.co
 In case you need a less strict format, with [CommonMark](https://commonmark.org/) compatibility, you can use:
 
 - The `.md` file extension instead of `.mdx`
+
 - The `format: md` front matter
 
 :::
@@ -284,11 +284,7 @@ You have to use `<CodeBlock>` rather than the Markdown triple-backtick ` ``` `, 
 
 :::
 
-:::warning
-
-This feature is experimental and might be subject to breaking API changes in the future.
-
-:::
+:::warning This feature is experimental and might be subject to breaking API changes in the future. :::
 
 ## Importing Markdown {#importing-markdown}
 
@@ -330,7 +326,9 @@ Currently, the table of contents does not contain the imported Markdown headings
 Within the MDX page, the following variables are available as globals:
 
 - `frontMatter`: the front matter as a record of string keys and values;
+
 - `toc`: the table of contents, as a tree of headings. See also [Inline TOC](./markdown-features-toc.mdx#inline-table-of-contents) for a more concrete use-case.
+
 - `contentTitle`: the Markdown title, which is the first `h1` heading in the Markdown text. It's `undefined` if there isn't one (e.g. title specified in the front matter).
 
 ```jsx

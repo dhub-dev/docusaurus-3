@@ -84,7 +84,7 @@ Start your localized site in dev mode, using the locale of your choice:
 npm run start -- --locale fr
 ```
 
-Your site is accessible at [http://localhost:3000/fr/](http://localhost:3000/fr/).
+Your site is accessible at <http://localhost:3000/fr/>.
 
 We haven't provided any translation yet, so the site is mostly untranslated.
 
@@ -92,7 +92,7 @@ We haven't provided any translation yet, so the site is mostly untranslated.
 
 Docusaurus provides **default translations** for generic theme labels, such as "Next" and "Previous" for the pagination.
 
-Please help us complete those **[default translations](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales)**.
+Please help us complete those [**default translations**](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-translations/locales).
 
 :::
 
@@ -119,6 +119,7 @@ For any React code you've written yourself: React pages, React components, etc.,
 Locate all text labels in your React code that will be visible to your users, and mark them with the translation APIs. There are two kinds of APIs:
 
 - The `<Translate>` component wraps a string as a JSX element;
+
 - The `translate()` callback takes a message and returns a string.
 
 Use the one that better fits the context semantically. For example, the `<Translate>` can be used as React children, while for props that expect a string, the callback can be used.
@@ -331,9 +332,13 @@ Docusaurus uses [`Intl.PluralRules`](https://developer.mozilla.org/en-US/docs/We
 JSON translation files are used for everything that is interspersed in your code:
 
 - React code, including the translated labels you have marked above
+
 - Navbar and footer labels in theme config
+
 - Docs sidebar category labels in `sidebars.js`
+
 - Blog sidebar title in plugin options
+
 - ...
 
 Run the [write-translations](../cli.mdx#docusaurus-write-translations-sitedir) command:
@@ -445,7 +450,7 @@ Generated IDs are not always a good fit for localized sites, as it requires you 
 + [link](#bonjour-le-monde)
 ```
 
-For localized sites, it is recommended to use **[explicit heading IDs](../guides/markdown-features/markdown-features-toc.mdx#explicit-ids)**.
+For localized sites, it is recommended to use [**explicit heading IDs**](../guides/markdown-features/markdown-features-toc.mdx#explicit-ids).
 
 :::
 
@@ -464,6 +469,7 @@ npm run build
 Docusaurus will build **one single-page application per locale**:
 
 - `website/build`: for the default, English language
+
 - `website/build/fr`: for the French language
 
 You can now [deploy](../deployment.mdx) the `build` folder to the static hosting solution of your choice.
@@ -472,8 +478,9 @@ You can now [deploy](../deployment.mdx) the `build` folder to the static hosting
 
 The Docusaurus v2 website uses this strategy:
 
-- [https://docusaurus.io](https://docusaurus.io)
-- [https://docusaurus.io/fr](https://docusaurus.io/fr)
+- <https://docusaurus.io>
+
+- <https://docusaurus.io/fr>
 
 :::
 
@@ -500,7 +507,9 @@ Docusaurus will not add the `/fr/` URL prefix.
 On your [static hosting provider](../deployment.mdx):
 
 - create one deployment per locale
+
 - configure the appropriate build command, using the `--locale` option
+
 - configure the (sub)domain of your choice for each deployment
 
 :::caution
@@ -516,6 +525,7 @@ It is possible to have some locales using sub-paths, and others using subdomains
 It is also possible to deploy each locale as a separate subdomain, assemble the subdomains in a single unified domain at the CDN level:
 
 - Deploy your site as `fr.docusaurus.io`
+
 - Configure a CDN to serve it from `docusaurus.io/fr`
 
 ## Managing translations {#managing-translations}

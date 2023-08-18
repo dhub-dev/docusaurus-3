@@ -13,11 +13,11 @@ This section is similar to [Styling and Layout](./styling-layout.mdx), but this 
 In practice, swizzling permits to **swap a theme component with your own implementation**, and it comes in 2 patterns:
 
 - [**Ejecting**](#ejecting): creates a **copy** of the original theme component, which you can fully **customize**
+
 - [**Wrapping**](#wrapping): creates a **wrapper** around the original theme component, which you can **enhance**
 
 <details>
-
-<summary>Why is it called swizzling?</summary>
+  <summary>Why is it called swizzling?</summary>
 
 **The name comes from Objective-C and Swift-UI**: [method swizzling](https://pspdfkit.com/blog/2019/swizzling-in-swift/) is the process of changing the implementation of an existing selector (method).
 
@@ -100,11 +100,7 @@ After swizzling a component, **restart your dev server** in order for Docusaurus
 
 :::
 
-:::warning Prefer staying on the safe side
-
-Be sure to understand [which components are **safe to swizzle**](#what-is-safe-to-swizzle). Some components are **internal implementation details** of a theme.
-
-:::
+:::warning Prefer staying on the safe side Be sure to understand [which components are **safe to swizzle**](#what-is-safe-to-swizzle). Some components are **internal implementation details** of a theme. :::
 
 :::info
 
@@ -227,8 +223,7 @@ export default function BlogPostItemWrapper(props) {
 Some theme components are **internal implementation details** of a theme. Docusaurus allows you to swizzle them, but it **might be risky**.
 
 <details>
-
-<summary>Why is it risky?</summary>
+  <summary>Why is it risky?</summary>
 
 Theme authors (including us) might have to update their theme over time: changing the component props, name, file system location, types... For example, consider a component that receives two props `name` and `age`, but after a refactor, it now receives a `person` prop with the above two properties. Your component, which still expects these two props, will render `undefined` instead.
 
@@ -241,7 +236,9 @@ Moreover, internal components may simply disappear. If a component is called `Si
 For each theme component, the swizzle CLI will indicate **3 different levels of safety** declared by theme authors:
 
 - **Safe**: this component is safe to be swizzled, its public API is considered stable, and no breaking changes should happen within a theme **major version**
+
 - **Unsafe**: this component is a theme implementation detail, not safe to be swizzled, and breaking changes might happen within a theme **minor version**
+
 - **Forbidden**: the swizzle CLI will prevent you from swizzling this component, because it is not designed to be swizzled at all
 
 :::note
@@ -279,8 +276,11 @@ npm run swizzle @docusaurus/theme-classic -- --list
 You can follow these steps to locate the appropriate component to swizzle:
 
 1. **Component description.** Some components provide a short description, which is a good way to find the right one.
+
 2. **Component name.** Official theme components are semantically named, so you should be able to infer its function from the name. The swizzle CLI allows you to enter part of a component name to narrow down the available choices. For example, if you run `yarn swizzle @docusaurus/theme-classic`, and enter `Doc`, only the docs-related components will be listed.
+
 3. **Start with a higher-level component.** Components form a tree with some components importing others. Every route will be associated with one top-level component that the route will render (most of them listed in [Routing in content plugins](./advanced/routing.mdx#routing-in-content-plugins)). For example, all blog post pages have `@theme/BlogPostPage` as the topmost component. You can start with swizzling this component, and then go down the component tree to locate the component that renders just what you are targeting. Don't forget to unswizzle the rest by deleting the files after you've found the correct one, so you don't maintain too many components.
+
 4. **Read the [theme source code](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)** and use search wisely.
 
 :::tip Just ask!
@@ -296,6 +296,7 @@ We also want to understand better your fanciest customization use-cases, so plea
 Swizzling ultimately means you have to maintain some additional React code that interact with Docusaurus internal APIs. If you can, think about the following alternatives when customizing your site:
 
 1. **Use CSS.** CSS rules and selectors can often help you achieve a decent degree of customization. Refer to [styling and layout](./styling-layout.mdx) for more details.
+
 2. **Use translations.** It may sound surprising, but translations are ultimately just a way to customize the text labels. For example, if your site's default language is `en`, you can still run `yarn write-translations -l en` and edit the `code.json` emitted. Refer to the [i18n tutorial](./i18n/i18n-tutorial.mdx) for more details.
 
 :::tip
