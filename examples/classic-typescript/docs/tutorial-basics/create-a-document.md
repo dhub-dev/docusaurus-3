@@ -7,7 +7,9 @@ sidebar_position: 2
 Documents are **groups of pages** connected through:
 
 - a **sidebar**
+
 - **previous/next navigation**
+
 - **versioning**
 
 ## Create your first Doc
@@ -20,7 +22,7 @@ Create a Markdown file at `docs/hello.md`:
 This is my **first Docusaurus document**!
 ```
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+A new document is now available at <http://localhost:3000/docs/hello>.
 
 ## Configure the Sidebar
 
@@ -28,7 +30,7 @@ Docusaurus automatically **creates a sidebar** from the `docs` folder.
 
 Add metadata to customize the sidebar label and position:
 
-```md title="docs/hello.md" {1-4}
+```md title="docs/hello.md"
 ---
 sidebar_label: 'Hi!'
 sidebar_position: 3

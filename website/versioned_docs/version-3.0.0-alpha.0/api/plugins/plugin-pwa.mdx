@@ -101,27 +101,37 @@ Offline mode / precaching requires downloading all the static assets of the site
 ### `debug` {#debug}
 
 - Type: `boolean`
+
 - Default: `false`
 
 Turn debug mode on:
 
 - Workbox logs
+
 - Additional Docusaurus logs
+
 - Unoptimized SW file output
+
 - Source maps
 
 ### `offlineModeActivationStrategies` {#offlinemodeactivationstrategies}
 
 - Type: `('appInstalled' | 'mobile' | 'saveData'| 'queryString' | 'always')[]`
+
 - Default: `['appInstalled', 'queryString', 'standalone']`
 
 Strategies used to turn the offline mode on:
 
 - `appInstalled`: activates for users having installed the site as an app (not 100% reliable)
+
 - `standalone`: activates for users running the app as standalone (often the case once a PWA is installed)
+
 - `queryString`: activates if queryString contains `offlineMode=true` (convenient for PWA debugging)
+
 - `mobile`: activates for mobile users (`width <= 996px`)
+
 - `saveData`: activates for users with `navigator.connection.saveData === true`
+
 - `always`: activates for all users
 
 :::caution
@@ -145,6 +155,7 @@ The [`standalone` strategy](https://petelepage.com/blog/2019/07/is-my-pwa-instal
 [Workbox options](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-InjectManifestOptions) to pass to `workbox.injectManifest()`. This gives you control over which assets will be precached, and be available offline.
 
 - Type: `InjectManifestOptions`
+
 - Default: `{}`
 
 ```js title="docusaurus.config.js"
@@ -174,6 +185,7 @@ module.exports = {
 ### `pwaHead` {#pwahead}
 
 - Type: `({ tagName: string; [attributeName: string]: string })[]`
+
 - Default: `[]`
 
 Array of objects containing `tagName` and key-value pairs for attributes to inject into the `<head>` tag. Technically you can inject any head tag through this, but it's ideally used for tags to make your site PWA compliant. Here's a list of tag to make your app fully compliant:
@@ -241,6 +253,7 @@ module.exports = {
 ### `swCustom` {#swcustom}
 
 - Type: `string | undefined`
+
 - Default: `undefined`
 
 Useful for additional Workbox rules. You can do whatever a service worker can do here, and use the full power of workbox libraries. The code is transpiled, so you can use modern ES6+ syntax here.
@@ -274,6 +287,7 @@ The module should have a `default` function export, and receives some params.
 ### `swRegister` {#swregister}
 
 - Type: `string | false`
+
 - Default: `'docusaurus-plugin-pwa/src/registerSW.js'`
 
 Adds an entry before the Docusaurus app so that registration can happen before the app runs. The default `registerSW.js` file is enough for simple registration.

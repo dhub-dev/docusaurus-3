@@ -37,7 +37,7 @@ import ErrorBoundaryTestButton from "@site/src/components/ErrorBoundaryTestButto
 
 :::tip
 
-To see it in action, click here: <ErrorBoundaryTestButton/>
+To see it in action, click here: <ErrorBoundaryTestButton />
 
 :::
 
@@ -193,6 +193,7 @@ Use it for integrating with code that can't run in Node.js, because the `window`
 #### Props {#browseronly-props}
 
 - `children`: render function prop returning browser-only JSX. Will not be executed in Node.js
+
 - `fallback` (optional): JSX to render on the server (Node.js) and until React hydration completes.
 
 #### Example with code {#browseronly-example-code}
@@ -243,6 +244,7 @@ The placeholders will be replaced with the provided dynamic values and JSX eleme
 #### Props {#interpolate-props}
 
 - `children`: text containing interpolation placeholders like `{placeholderName}`
+
 - `values`: object containing interpolation placeholder values
 
 ```jsx
@@ -286,8 +288,11 @@ Apart from the `values` prop used for interpolation, it is **not possible to use
 #### Props {#translate-props}
 
 - `children`: untranslated string in the default site locale (can contain [interpolation placeholders](#interpolate))
+
 - `id`: optional value to be used as the key in JSON translation files
+
 - `description`: optional text to help the translator
+
 - `values`: optional object containing interpolation placeholder values
 
 #### Example {#example}
@@ -444,6 +449,7 @@ React hook to prepend your site `baseUrl` to a string.
 The `/baseUrl/` prefix is automatically added to all **absolute paths** by default:
 
 - Markdown: `[link](/my/path)` will link to `/baseUrl/my/path`
+
 - React: `<Link to="/my/path/">link</Link>` will link to `/baseUrl/my/path`
 
 :::
@@ -642,7 +648,9 @@ The imperative counterpart of the [`<Translate>`](#translate) component. Also su
 Use the imperative API for the **rare cases** where a **component cannot be used**, such as:
 
 - the page `title` metadata
+
 - the `placeholder` props of form inputs
+
 - the `aria-label` props for accessibility
 
 :::

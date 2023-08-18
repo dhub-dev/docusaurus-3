@@ -3,5 +3,5 @@ foo
 `bar`
 
 ```js
-baz
+baz;
 ```
