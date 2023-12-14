@@ -14,3 +14,9 @@ You can run them in CodeSandbox:
 **Tip**: use the [new.docusaurus.io](https://new.docusaurus.io) shortcut.
 
 **Note**: We update these examples regularly with `yarn examples:generate`
+
+| asdfsadf | sadf |      |
+| -------- | ---- | ---- |
+| sadf     | sadf | sadf |
+| sadf     | sadf | sadf |
+|          |      |      |
