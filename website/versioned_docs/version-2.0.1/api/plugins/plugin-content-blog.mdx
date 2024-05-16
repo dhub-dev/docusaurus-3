@@ -38,20 +38,20 @@ Accepted fields:
 ```
 
 | Name | Type | Default | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- |
 | `path` | `string` | `'blog'` | Path to the blog content directory on the file system, relative to site dir. |
-| `editUrl` | <code>string \| <a href="#EditUrlFn">EditUrlFn</a></code> | `undefined` | Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links. |
+| `editUrl` | <code>string | <a href="#EditUrlFn">EditUrlFn</a></code> | `undefined` | Base URL to edit your site. The final URL is computed by `editUrl + relativePostPath`. Using a function allows more nuanced control for each file. Omitting this variable entirely will disable edit links. |
 | `editLocalizedFiles` | `boolean` | `false` | The edit URL will target the localized file, instead of the original unlocalized file. Ignored when `editUrl` is a function. |
 | `blogTitle` | `string` | `'Blog'` | Blog page title for better SEO. |
 | `blogDescription` | `string` | `'Blog'` | Blog page meta description for better SEO. |
-| `blogSidebarCount` | <code>number \| 'ALL'</code> | `5` | Number of blog post elements to show in the blog sidebar. `'ALL'` to show all blog posts; `0` to disable. |
+| `blogSidebarCount` | <code>number | 'ALL'</code> | `5` | Number of blog post elements to show in the blog sidebar. `'ALL'` to show all blog posts; `0` to disable. |
 | `blogSidebarTitle` | `string` | `'Recent posts'` | Title of the blog sidebar. |
 | `routeBasePath` | `string` | `'blog'` | URL route for the blog section of your site. **DO NOT** include a trailing slash. Use `/` to put the blog at root path. |
 | `tagsBasePath` | `string` | `'tags'` | URL route for the tags section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. |
-| `archiveBasePath` | <code>string \| null</code> | `'archive'` | URL route for the archive section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. Use `null` to disable generation of archive. |
+| `archiveBasePath` | <code>string | null</code> | `'archive'` | URL route for the archive section of your blog. Will be appended to `routeBasePath`. **DO NOT** include a trailing slash. Use `null` to disable generation of archive. |
 | `include` | `string[]` | `['**/*.{md,mdx}']` | Array of glob patterns matching Markdown files to be built, relative to the content path. |
 | `exclude` | `string[]` | _See example configuration_ | Array of glob patterns matching Markdown files to be excluded. Serves as refinement based on the `include` option. |
-| `postsPerPage` | <code>number \| 'ALL'</code> | `10` | Number of posts to show per page in the listing page. Use `'ALL'` to display all posts on one listing page. |
+| `postsPerPage` | <code>number | 'ALL'</code> | `10` | Number of posts to show per page in the listing page. Use `'ALL'` to display all posts on one listing page. |
 | `blogListComponent` | `string` | `'@theme/BlogListPage'` | Root component of the blog listing page. |
 | `blogPostComponent` | `string` | `'@theme/BlogPostPage'` | Root component of each blog post page. |
 | `blogTagsListComponent` | `string` | `'@theme/BlogTagsListPage'` | Root component of the tags list page. |
@@ -66,12 +66,12 @@ Accepted fields:
 | `readingTime` | `ReadingTimeFn` | The default reading time | A callback to customize the reading time number displayed. |
 | `authorsMapPath` | `string` | `'authors.yml'` | Path to the authors map file, relative to the blog content directory. |
 | `feedOptions` | _See below_ | `{type: ['rss', 'atom']}` | Blog feed. |
-| `feedOptions.type` | <code><a href="#FeedType">FeedType</a> \| <a href="#FeedType">FeedType</a>[] \| 'all' \| null</code> | **Required** | Type of feed to be generated. Use `null` to disable generation. |
+| `feedOptions.type` | <code><a href="#FeedType">FeedType</a> | <a href="#FeedType">FeedType</a>[] | 'all' | null</code> | **Required** | Type of feed to be generated. Use `null` to disable generation. |
 | `feedOptions.title` | `string` | `siteConfig.title` | Title of the feed. |
-| `feedOptions.description` | `string` | <code>\`$\{siteConfig.title} Blog\`</code> | Description of the feed. |
+| `feedOptions.description` | `string` | <code>`${siteConfig.title} Blog`</code> | Description of the feed. |
 | `feedOptions.copyright` | `string` | `undefined` | Copyright message. |
 | `feedOptions.language` | `string` (See [documentation](http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes) for possible values) | `undefined` | Language metadata of the feed. |
-| `sortPosts` | <code>'descending' \| 'ascending' </code> | `'descending'` | Governs the direction of blog post sorting. |
+| `sortPosts` | <code>'descending' | 'ascending' </code> | `'descending'` | Governs the direction of blog post sorting. |
 
 ```mdx-code-block
 </APITable>
@@ -127,7 +127,7 @@ Most Docusaurus users configure this plugin through the preset options.
 
 :::
 
-```js config-tabs
+```js
 // Preset Options: blog
 // Plugin Options: @docusaurus/plugin-content-blog
 

@@ -53,19 +53,28 @@ The component used for Markdown pages is `@theme/MDXPage`. React pages are direc
 The blog creates the following routes:
 
 - **Posts list pages**: `/`, `/page/2`, `/page/3`...
+
   - The component is `@theme/BlogListPage`.
+
 - **Post pages**: `/2021/11/21/algolia-docsearch-migration`, `/2021/05/12/announcing-docusaurus-two-beta`...
+
   - Generated from each Markdown post.
   - The routes are fully customizable through the `slug` front matter.
   - The component is `@theme/BlogPostPage`.
+
 - **Tags list page**: `/tags`
+
   - The route is customizable through the `tagsBasePath` option.
   - The component is `@theme/BlogTagsListPage`.
+
 - **Tag pages**: `/tags/adoption`, `/tags/beta`...
+
   - Generated through the tags defined in each post's front matter.
   - The routes always have base defined in `tagsBasePath`, but the subroutes are customizable through the tag's `permalink` field.
   - The component is `@theme/BlogTagsPostsPage`.
+
 - **Archive page**: `/archive`
+
   - The route is customizable through the `archiveBasePath` option.
   - The component is `@theme/BlogArchivePage`.
 
@@ -101,8 +110,7 @@ When writing links in Markdown, you could either mean a _file path_, or a _URL p
 The following directory structure may help you visualize this file → URL mapping. Assume that there's no slug customization in any page.
 
 <details>
-
-<summary>A sample site structure</summary>
+  <summary>A sample site structure</summary>
 
 ```bash
 .
@@ -154,8 +162,7 @@ The `/docs/advanced/routing` route can correspond to either `/docs/advanced/rout
 For example, the build output of the directory above is (ignoring other assets and JS bundle):
 
 <details>
-
-<summary>Output of the above workspace</summary>
+  <summary>Output of the above workspace</summary>
 
 ```bash
 build
@@ -273,10 +280,7 @@ If you put some HTML pages under the `static` folder, they will be copied to the
 ```
 
 <BrowserWindow>
-
-- [/pure-html](/pure-html)
-- [pathname:///pure-html](pathname:///pure-html)
-
+  - [/pure-html](/pure-html) - [pathname:///pure-html](pathname:///pure-html)
 </BrowserWindow>
 
 :::tip

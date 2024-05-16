@@ -23,23 +23,23 @@ class HelloWorld {
 
 See:
 
-- https://github.com/facebook/docusaurus/pull/1584
-- https://github.com/facebook/docusaurus/pull/3749
-- https://github.com/facebook/docusaurus/pull/6177
+- [https://github.com/facebook/docusaurus/pull/1584](https://github.com/facebook/docusaurus/pull/1584)
+- [https://github.com/facebook/docusaurus/pull/3749](https://github.com/facebook/docusaurus/pull/3749)
+- [https://github.com/facebook/docusaurus/pull/6177](https://github.com/facebook/docusaurus/pull/6177)
 
 ## `pre`
 
 ### `pre > string`
 
-Multi-line text inside `pre` will turn into one-liner, but it's okay (https://github.com/mdx-js/mdx/issues/1095)
+Multi-line text inside `pre` will turn into one-liner, but it's okay ([https://github.com/mdx-js/mdx/issues/1095](https://github.com/mdx-js/mdx/issues/1095))
 
 <pre>1 2 3</pre>
 
 {/* prettier-ignore */}
 <pre>
-1
-2
-3
+  1
+  2
+  3
 </pre>
 
 ### `pre > string[]`
@@ -103,13 +103,21 @@ Multi-line text inside `pre` will turn into one-liner, but it's okay (https://gi
 
 <code>
   <a href="/">Front page</a>
-  <br />
-  <strong>Input: </strong>a = "abcd", b = "cdabcdab"
-  <br />
-  <strong>Output: </strong>3<br />
-  <strong>Explanation: </strong>a after three repetitions become "ab<strong>
-    cdabcdab
-  </strong>cd", at which time b is a substring.
+
+{' '}
+<br />
+
+{' '}
+<strong>Input: </strong>a = "abcd", b = "cdabcdab"
+
+{' '}
+<br />
+
+{' '}
+<strong>Output: </strong>3<br />
+<strong>Explanation: </strong>a after three repetitions become "ab
+<strong>cdabcdab</strong>cd", at which time b is a substring.
+
   <br />
 </code>
 
@@ -143,13 +151,21 @@ Multi-line text inside `pre` will turn into one-liner, but it's okay (https://gi
 
 <CodeBlock className="language-yaml" title="test">
   <a href="/">Front page</a>
-  <br />
-  <strong>Input: </strong>a = "abcd", b = "cdabcdab"
-  <br />
-  <strong>Output: </strong>3<br />
-  <strong>Explanation: </strong>a after three repetitions become "ab<strong>
-    cdabcdab
-  </strong>cd", at which time b is a substring.
+
+{' '}
+<br />
+
+{' '}
+<strong>Input: </strong>a = "abcd", b = "cdabcdab"
+
+{' '}
+<br />
+
+{' '}
+<strong>Output: </strong>3<br />
+<strong>Explanation: </strong>a after three repetitions become "ab
+<strong>cdabcdab</strong>cd", at which time b is a substring.
+
   <br />
 </CodeBlock>
 
@@ -169,7 +185,7 @@ function PageLayout(props) {
 }
 ```
 
-```jsx {1,3,6} showLineNumbers
+```jsx showLineNumbers
 function PageLayout(props) {
   console.log(
     'Test Test Test Test Test Test Test Test Test Test Test Test Test Test ',
@@ -203,8 +219,6 @@ function PageLayout(props) {
 
 ## Code block wrapping tests
 
-[// spell-checker:disable]: #
-
 ```bash
 mkdir this_is_a_loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong_string_to_test_code_block_wrapping
 echo "this is a long string made up of many separate words that should be broken between words when possible"
@@ -212,51 +226,38 @@ curl https://docusaurus.io/tests/pages/code-block-tests
 ```
 
 <Tabs>
+  <TabItem value="short-tab-1" label="Short tab">
+    ```bash
+    echo "hi"
+    ```
+  </TabItem>
 
-<TabItem value="short-tab-1" label="Short tab">
-
-```bash
-echo "hi"
-```
-
-</TabItem>
+{' '}
 <TabItem value="long-tab" label="Long tab">
-
-```bash
-echo this will test whether a long string that is initially hidden will have the option to wrap when made visible
-```
-
+  ```bash echo this will test whether a long string that is initially hidden
+  will have the option to wrap when made visible ```
 </TabItem>
 
-<TabItem value="short-tab-2" label="Short tab">
-
-```bash
-rm short_initially_hidden_string
-```
-
-</TabItem>
+  <TabItem value="short-tab-2" label="Short tab">
+    ```bash
+    rm short_initially_hidden_string
+    ```
+  </TabItem>
 </Tabs>
 
 <Tabs>
+  <TabItem value="long-tab" label="Long tab">
+    ```bash
+    echo medium_length_string_will_have_the_option_to_wrap_after_window_resized_while_it_is_hidden
+    ```
+  </TabItem>
 
-<TabItem value="long-tab" label="Long tab">
-
-```bash
-echo medium_length_string_will_have_the_option_to_wrap_after_window_resized_while_it_is_hidden
-```
-
-</TabItem>
-
-<TabItem value="short-tab" label="Short tab">
-
-```bash
-echo "short_initially_hidden_string"
-```
-
-</TabItem>
+  <TabItem value="short-tab" label="Short tab">
+    ```bash
+    echo "short_initially_hidden_string"
+    ```
+  </TabItem>
 </Tabs>
-
-[// spell-checker:enable]: #
 
 ```jsx showLineNumbers
 import React from 'react';

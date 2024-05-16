@@ -46,11 +46,7 @@ Builds and serves a preview of your site locally with [Webpack Dev Server](https
 | `--poll [optionalIntervalMs]` | `false` | Use polling of files rather than watching for live reload as a fallback in environments where watching doesn't work. More information [here](https://webpack.js.org/configuration/watch/#watchoptionspoll). |
 | `--no-minify` | `false` | Build website without minimizing JS/CSS bundles. |
 
-:::important
-
-Please note that some functionality (for example, anchor links) will not work in development. The functionality will work as expected in production.
-
-:::
+:::important Please note that some functionality (for example, anchor links) will not work in development. The functionality will work as expected in production. :::
 
 :::info Development over network
 
@@ -76,7 +72,7 @@ There are multiple ways to obtain a certificate. We will use [mkcert](https://gi
 HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem yarn start
 ```
 
-4. Open `https://localhost:3000/`
+1. Open `https://localhost:3000/`
 
 ### `docusaurus build [siteDir]` {#docusaurus-build-sitedir}
 
