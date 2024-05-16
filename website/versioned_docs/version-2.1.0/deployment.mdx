@@ -97,36 +97,30 @@ There are a few common hosting options:
 If you are unsure of which one to choose, ask the following questions:
 
 <details>
-
-<summary>
-  How much resource (person-hours, money) am I willing to invest in this?
-</summary>
+  <summary>
+    How much resource (person-hours, money) am I willing to invest in this?
+  </summary>
 
 - 🔴 Self-hosting is the hardest to set up—you would usually need an experienced person to manage this. Cloud services are almost never free, and setting up an on-site server and connecting it to the WAN can be even more costly.
 - 🟢 Jamstack providers can help you set up a working website in almost no time and offers features like server-side redirects that are easily configurable. Many providers offer generous build time quotas even for free plans that you would almost never exceed. However, it's still ultimately limited—you would need to pay once you hit the limit. Check the pricing page of your provider for details.
 - 🟡 The GitHub Pages deployment workflow can be tedious to set up. (Evidence: see the length of [Deploying to GitHub Pages](#deploying-to-github-pages)!) However, this service (including build and deployment) is always free for public repositories, and we have detailed instructions to help you make it work.
-
-</details>
+  </details>
 
 <details>
-
-<summary>How much server-side configuration would I need?</summary>
+  <summary>How much server-side configuration would I need?</summary>
 
 - 🟢 With self-hosting, you have access to the entire server's configuration. You can configure the virtual host to serve different content based on the request URL; you can do complicated server-side redirects; you can put part of the site behind authentication... If you need a lot of server-side features, self-host your website.
 - 🟡 Jamstack usually offers some server-side configurations, e.g. URLs formatting (trailing slashes), server-side redirects...
 - 🔴 GitHub Pages doesn't expose server-side configurations besides enforcing HTTPS and setting CNAME.
-
-</details>
+  </details>
 
 <details>
-
-<summary>Do I have needs to cooperate?</summary>
+  <summary>Do I have needs to cooperate?</summary>
 
 - 🟡 Self-hosted services can achieve the same effect as Netlify, but with much more heavy-lifting. Usually, you would have a specific person who looks after the deployment, and the workflow won't be very git-based as opposed to the other two options.
 - 🟢 Netlify and Vercel have deploy previews for every pull request, which is useful for a team to review work before merging to production. You can also manage a team with different member access to the deployment.
 - 🟡 GitHub Pages cannot do deploy previews in a non-convoluted way. One repo can only be associated with one site deployment. On the other hand, you can control who has write access to the site's deployment.
-
-</details>
+  </details>
 
 There isn't a silver bullet. You need to weigh your needs and resources before making a choice.
 
@@ -138,19 +132,11 @@ Docusaurus can be self-hosted using [`docusaurus serve`](cli.mdx#docusaurus-serv
 npm run serve -- --build --port 80 --host 0.0.0.0
 ```
 
-:::warning
+:::warning It is not the best option, compared to a static hosting provider / CDN. :::
 
-It is not the best option, compared to a static hosting provider / CDN.
+:::warning In the following sections, we will introduce a few common hosting providers and how they should be configured to deploy Docusaurus sites most efficiently. Some of the writeups are provided by external contributors. Docusaurus is not interest-related with any of the services. The documentation may not be up-to-date: recent changes in their API may not be reflected on our side. If you see outdated content, PRs are welcome.
 
-:::
-
-:::warning
-
-In the following sections, we will introduce a few common hosting providers and how they should be configured to deploy Docusaurus sites most efficiently. Some of the writeups are provided by external contributors. Docusaurus is not interest-related with any of the services. The documentation may not be up-to-date: recent changes in their API may not be reflected on our side. If you see outdated content, PRs are welcome.
-
-For the same concern of up-to-datedness, we have stopped accepting PRs adding new hosting options. You can, however, publish your writeup on a separate site (e.g. your blog, or the provider's official website), and ask us to include a link to your writeup.
-
-:::
+For the same concern of up-to-datedness, we have stopped accepting PRs adding new hosting options. You can, however, publish your writeup on a separate site (e.g. your blog, or the provider's official website), and ask us to include a link to your writeup. :::
 
 ## Deploying to Netlify {#deploying-to-netlify}
 
@@ -196,9 +182,7 @@ If you decide to use the `website` folder as Netlify's base directory, Netlify w
 
 :::
 
-:::warning
-
-By default, Netlify adds trailing slashes to Docusaurus URLs.
+:::warning By default, Netlify adds trailing slashes to Docusaurus URLs.
 
 It is recommended to disable the Netlify setting `Post Processing > Asset Optimization > Pretty Urls` to prevent lowercased URLs, unnecessary redirects, and 404 errors.
 
@@ -206,9 +190,7 @@ It is recommended to disable the Netlify setting `Post Processing > Asset Optimi
 
 If you want to keep the `Pretty Urls` Netlify setting on, adjust the `trailingSlash` Docusaurus config appropriately.
 
-Refer to [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) for more information.
-
-:::
+Refer to [slorber/trailing-slash-guide](https://github.com/slorber/trailing-slash-guide) for more information. :::
 
 ## Deploying to Vercel {#deploying-to-vercel}
 
@@ -276,11 +258,7 @@ module.exports = {
 };
 ```
 
-:::warning
-
-By default, GitHub Pages runs published files through [Jekyll](https://jekyllrb.com/). Since Jekyll will discard any files that begin with `_`, it is recommended that you disable Jekyll by adding an empty file named `.nojekyll` file to your `static` directory.
-
-:::
+:::warning By default, GitHub Pages runs published files through [Jekyll](https://jekyllrb.com/). Since Jekyll will discard any files that begin with `_`, it is recommended that you disable Jekyll by adding an empty file named `.nojekyll` file to your `static` directory. :::
 
 ### Environment settings {#environment-settings}
 
@@ -368,17 +346,13 @@ While you can have both jobs defined in the same workflow file, the original `de
 We will use a popular third-party deployment action: [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus).
 
 <details>
-<summary>GitHub action files</summary>
+  <summary>GitHub action files</summary>
 
 Add these two workflow files:
 
-:::warning Tweak the parameters for your setup
+:::warning Tweak the parameters for your setup These files assume you are using Yarn. If you use npm, change `cache: yarn`, `yarn install --frozen-lockfile`, `yarn build` to `cache: npm`, `npm ci`, `npm run build` accordingly.
 
-These files assume you are using Yarn. If you use npm, change `cache: yarn`, `yarn install --frozen-lockfile`, `yarn build` to `cache: npm`, `npm ci`, `npm run build` accordingly.
-
-If your Docusaurus project is not at the root of your repo, you may need to configure a [default working directory](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-set-the-default-shell-and-working-directory), and adjust the paths accordingly.
-
-:::
+If your Docusaurus project is not at the root of your repo, you may need to configure a [default working directory](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-set-the-default-shell-and-working-directory), and adjust the paths accordingly. :::
 
 ```yml title=".github/workflows/deploy.yml"
 name: Deploy to GitHub Pages
@@ -468,16 +442,11 @@ A cross-repo publish is more difficult to set up, because you need to push to an
 7. You should have essentially: the source repo with the GitHub workflow set with the private SSH key as GitHub Secret and your deployment repo set with the public SSH key in GitHub Deploy Keys.
 
 <details>
+  <summary>GitHub action file</summary>
 
-<summary>GitHub action file</summary>
+:::warning Please make sure that you replace `actions@github.com` with your GitHub email and `gh-actions` with your name.
 
-:::warning
-
-Please make sure that you replace `actions@github.com` with your GitHub email and `gh-actions` with your name.
-
-This file assumes you are using Yarn. If you use npm, change `cache: yarn`, `yarn install --frozen-lockfile`, `yarn build` to `cache: npm`, `npm ci`, `npm run build` accordingly.
-
-:::
+This file assumes you are using Yarn. If you use npm, change `cache: yarn`, `yarn install --frozen-lockfile`, `yarn build` to `cache: npm`, `npm ci`, `npm run build` accordingly. :::
 
 ```yml title=".github/workflows/deploy.yml"
 name: Deploy to GitHub Pages
@@ -532,8 +501,7 @@ jobs:
 ```
 
 <details>
-
-<summary>Site not deployed properly?</summary>
+  <summary>Site not deployed properly?</summary>
 
 After pushing to main, if you don't see your site published at the desired location (for example, it says "There isn't a GitHub Pages site here", or it's showing your repo's README.md file), check the following:
 
@@ -542,14 +510,13 @@ After pushing to main, if you don't see your site published at the desired locat
 - Click on the tick and make sure your see a "Deploy to GitHub Pages" workflow. Names like "pages build and deployment / deploy" are GitHub's default workflows, indicating your custom deployment workflow failed to be triggered at all. Make sure the YAML files are put under the `.github/workflows` folder, and the trigger condition is set correctly (for example, if your default branch is "master" instead of "main", you need to change the `on.push` property).
 - We are using `gh-pages` as the deployment branch. Under your repo's Settings > Pages, make sure the "Source" (which is the source for the _deployment_ files, not "source" as in our terminology) is set to "gh-pages" + "/ (root)".
 - If you are using a custom domain, make sure the DNS record is pointing to the GitHub pages servers' IP.
-
-</details>
+  </details>
 
 ### Triggering deployment with Travis CI {#triggering-deployment-with-travis-ci}
 
 Continuous integration (CI) services are typically used to perform routine tasks whenever new commits are checked in to source control. These tasks can be any combination of running unit tests and integration tests, automating builds, publishing packages to npm, and deploying changes to your website. All you need to do to automate the deployment of your website is to invoke the `yarn deploy` script whenever your website is updated. The following section covers how to do just that using [Travis CI](https://travis-ci.com/), a popular continuous integration service provider.
 
-1. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.
+1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens) and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.
 2. Using your GitHub account, [add the Travis CI app](https://github.com/marketplace/travis-ci) to the repository you want to activate.
 3. Open your Travis CI dashboard. The URL looks like `https://travis-ci.com/USERNAME/REPO`, and navigate to the `More options > Setting > Environment Variables` section of your repository.
 4. Create a new environment variable named `GH_TOKEN` with your newly generated token as its value, then `GH_EMAIL` (your email address) and `GH_NAME` (your GitHub username).
@@ -580,7 +547,7 @@ Now, whenever a new commit lands in `main`, Travis CI will run your suite of tes
 
 Follow these steps to create a pipeline that automatically deploys a new version of your website whenever you push changes to the selected branch of your project:
 
-1. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.
+1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens) and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/). When creating the token, grant it the `repo` scope so that it has the permissions it needs.
 2. Sign in to your Buddy account and create a new project.
 3. Choose GitHub as your git hosting provider and select the repository with the code of your website.
 4. Using the left navigation panel, switch to the `Pipelines` view.
@@ -601,7 +568,7 @@ After creating this simple pipeline, each new commit pushed to the branch you se
 
 1. Sign Up at [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) if you haven't already.
 2. Create an organization. Within the organization, create a project and connect your repository from GitHub.
-3. Go to https://github.com/settings/tokens and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the `repo` scope.
+3. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens) and generate a new [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) with the `repo` scope.
 4. In the project page (which looks like `https://dev.azure.com/ORG_NAME/REPO_NAME/_build`), create a new pipeline with the following text. Also, click on edit and add a new environment variable named `GH_TOKEN` with your newly generated token as its value, then `GH_EMAIL` (your email address) and `GH_NAME` (your GitHub username). Make sure to mark them as secret. Alternatively, you can also add a file named `azure-pipelines.yml` at your repository root.
 
 ```yml title="azure-pipelines.yml"
@@ -681,17 +648,23 @@ Now, whenever you push a new tag to GitHub, this trigger will start the drone CI
 
 1. Create a Qovery account. Visit the [Qovery dashboard](https://console.qovery.com) to create an account if you don't already have one.
 2. Create a project.
+
    - Click on **Create project** and give a name to your project.
    - Click on **Next**.
+
 3. Create a new environment.
+
    - Click on **Create environment** and give a name (e.g. staging, production).
+
 4. Add an application.
+
    - Click on **Create an application**, give a name and select your GitHub or GitLab repository where your Docusaurus app is located.
    - Define the main branch name and the root application path.
    - Click on **Create**. After the application is created:
    - Navigate to your application **Settings**
    - Select **Port**
    - Add port used by your Docusaurus application
+
 5. Deploy All you have to do now is to navigate to your application and click on **Deploy**.
 
 ![Deploy the app](https://hub.qovery.com/img/heroku/heroku-1.png)
@@ -745,14 +718,19 @@ Surge is a [static web hosting platform](https://surge.sh/help/getting-started-w
 Deploy your app in a matter of seconds using surge with the following steps:
 
 1. First, install Surge using npm by running the following command:
+
    ```bash npm2yarn
    npm install -g surge
    ```
+
 2. To build the static files of your site for production in the root directory of your project, run:
+
    ```bash npm2yarn
    npm run build
    ```
+
 3. Then, run this command inside the root directory of your project:
+
    ```bash
    surge build/
    ```
@@ -786,10 +764,13 @@ You can deploy any other changes in the future with the command `surge`.
 1. Install [Quant CLI](https://docs.quantcdn.io/docs/cli/get-started)
 2. Create a QuantCDN account by [signing up](https://dashboard.quantcdn.io/register)
 3. Initialize your project with `quant init` and fill in your credentials:
+
    ```bash
    quant init
    ```
+
 4. Deploy your site.
+
    ```bash
    quant deploy
    ```

@@ -147,7 +147,7 @@ module.exports = {
 Docusaurus will extract a `YYYY-MM-DD` date from a file/folder name such as `YYYY-MM-DD-my-blog-post-title.md`.
 
 <details>
-<summary>Example supported patterns</summary>
+  <summary>Example supported patterns</summary>
 
 | Pattern | Example |
 | --- | --- |
@@ -432,7 +432,7 @@ module.exports = {
 
 Usage:
 
-```md "my-blog-post.md"
+```md
 ---
 hide_reading_time: true
 ---
@@ -541,27 +541,20 @@ module.exports = {
 The feeds can be found at:
 
 <Tabs>
-<TabItem value="RSS">
+  <TabItem value="RSS">
+    ```text
+    https://example.com/blog/rss.xml
+    ```
+  </TabItem>
 
-```text
-https://example.com/blog/rss.xml
-```
+{' '}
+<TabItem value="Atom">```text https://example.com/blog/atom.xml ```</TabItem>
 
-</TabItem>
-<TabItem value="Atom">
-
-```text
-https://example.com/blog/atom.xml
-```
-
-</TabItem>
-<TabItem value="JSON">
-
-```text
-https://example.com/blog/feed.json
-```
-
-</TabItem>
+  <TabItem value="JSON">
+    ```text
+    https://example.com/blog/feed.json
+    ```
+  </TabItem>
 </Tabs>
 
 ## Advanced topics {#advanced-topics}

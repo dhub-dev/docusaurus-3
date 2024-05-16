@@ -60,12 +60,12 @@ _This is italic text_
 
 _This is italic text_
 
-~~Deleted text~~
+! unknown handler not found
 
 Superscript: 19^th^
 
-Subscript: H~2~O
+Unable to handle node text! unknown handler not foundUnable to handle node text
 
 ++Inserted text++
 
-==Marked text==
+\==Marked text==
